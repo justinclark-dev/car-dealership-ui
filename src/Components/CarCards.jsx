@@ -1,9 +1,6 @@
 import './CarCards.css';
 
 function CarCards({ cars }) {
-  if (!cars || cars.length === 0) {
-    return <p>No cars found.</p>;
-  }
 
   return (
     <ul className="car-list">
