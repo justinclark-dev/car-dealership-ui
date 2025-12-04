@@ -1,12 +1,8 @@
-import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 import NavBar from './Components/NavBar';
-import Inventory from './Pages/Inventory';
-// import Router from './Components/Router.jsx'
-import './App.css'
-import CarCards from './Components/CarCards.Jsx';
-import { useEffect, useState } from 'react' 
-import { fetchCars } from './Services/api.js';
+import Router from './Components/Router.jsx'
+import './App.css' 
+import Footer from './Components/Footer.jsx';
 
 function App() {
 
@@ -15,8 +11,9 @@ function App() {
       <BrowserRouter>
         <div className='App'>
           <NavBar />
-            <Inventory cars={cars} />
-            {/* <Router /> */}
+          <Router />
+          {/* <h1>Hello World!</h1> */}
+          <Footer />
         </div>
       </BrowserRouter>
     </>
