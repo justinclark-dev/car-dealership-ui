@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { createCar } from '../Services/cars';
 
+// Baseline state so we can quickly clear the form after a save.
 const initialForm = {
   make: '',
   model: '',
@@ -30,6 +31,12 @@ export default function AddCar() {
     }));
   };
 
+  const resetForm = () => {
+    setForm(initialForm);
+    setMessage('');
+    setError('');
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setSubmitting(true);
@@ -52,7 +59,7 @@ export default function AddCar() {
       setForm(initialForm);
       setMessage('Car added successfully');
     } catch (err) {
-      setError(err.message);
+      setError(err.message || 'Unable to save car right now.');
     } finally {
       setSubmitting(false);
     }
@@ -60,8 +67,10 @@ export default function AddCar() {
 
   return (
     <section className="add-car">
-      <h2>Add Car</h2>
-      <p>Fill out the details below to add a car to inventory.</p>
+      <header>
+        <h1>Add a Car</h1>
+        <p>Enter listing details to add the car to dealership inventory.</p>
+      </header>
 
       <form onSubmit={handleSubmit} className="add-car__form">
         <div className="grid">
@@ -72,6 +81,7 @@ export default function AddCar() {
               value={form.make}
               onChange={handleChange}
               required
+              placeholder="Honda"
             />
           </label>
 
@@ -82,6 +92,7 @@ export default function AddCar() {
               value={form.model}
               onChange={handleChange}
               required
+              placeholder="Civic"
             />
           </label>
 
@@ -94,6 +105,7 @@ export default function AddCar() {
               onChange={handleChange}
               required
               min="1886"
+              placeholder="2020"
             />
           </label>
 
@@ -103,6 +115,7 @@ export default function AddCar() {
               name="trim"
               value={form.trim}
               onChange={handleChange}
+              placeholder="EX / Sport / Touring"
             />
           </label>
 
@@ -112,6 +125,7 @@ export default function AddCar() {
               name="color"
               value={form.color}
               onChange={handleChange}
+              placeholder="Blue"
             />
           </label>
 
@@ -123,6 +137,7 @@ export default function AddCar() {
               name="price_listed"
               value={form.price_listed}
               onChange={handleChange}
+              placeholder="22000"
             />
           </label>
 
@@ -133,6 +148,7 @@ export default function AddCar() {
               name="milage"
               value={form.milage}
               onChange={handleChange}
+              placeholder="54000"
             />
           </label>
 
@@ -143,6 +159,7 @@ export default function AddCar() {
               name="days_on_lot"
               value={form.days_on_lot}
               onChange={handleChange}
+              placeholder="0"
             />
           </label>
 
@@ -152,6 +169,7 @@ export default function AddCar() {
               name="buyer"
               value={form.buyer}
               onChange={handleChange}
+              placeholder="(optional)"
             />
           </label>
 
@@ -163,6 +181,7 @@ export default function AddCar() {
               name="price_sold"
               value={form.price_sold}
               onChange={handleChange}
+              placeholder="(if sold)"
             />
           </label>
         </div>
@@ -190,11 +209,21 @@ export default function AddCar() {
         </div>
 
         {error && <p className="error">Error: {error}</p>}
-        {message && <p className="success">{message}</p>}
+        {message && <p className="success">Success: {message}</p>}
 
-        <button type="submit" disabled={submitting}>
-          {submitting ? 'Saving…' : 'Add Car'}
-        </button>
+        <div className="actions">
+          <button type="submit" disabled={submitting}>
+            {submitting ? 'Saving…' : 'Add Car'}
+          </button>
+          <button
+            type="button"
+            className="secondary"
+            onClick={resetForm}
+            disabled={submitting}
+          >
+            Clear
+          </button>
+        </div>
       </form>
     </section>
   );
