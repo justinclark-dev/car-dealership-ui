@@ -3,7 +3,6 @@ import Inventory from "../Pages/Inventory.jsx";
 import Car from "../Pages/Car/Car.jsx";
 import AddCar from "../Pages/AddCar.jsx";   
 
-
 const Router = () => {
 
 return (
