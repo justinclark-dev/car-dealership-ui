@@ -1,10 +1,11 @@
-import CarCards from "../Components/CarCards.Jsx";
+import CarCards from "../Components/CarCards.jsx";
+import { useState, useEffect } from "react";
+import { fetchCars } from "../Services/api.js";
 
-function Inventory({ cars }) {
-
+function Inventory() {
     const [cars, setCars] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
 
   useEffect(() => {
