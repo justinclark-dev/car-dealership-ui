@@ -1,6 +1,7 @@
 import {Routes, Route} from "react-router-dom";
-import Inventory from "../Pages/Inventory";
-import Car from "../Pages/Car";
+import Inventory from "../Pages/Inventory.jsx";
+import Car from "../Pages/Car.jsx";
+
 
 const Router = () => {
 
