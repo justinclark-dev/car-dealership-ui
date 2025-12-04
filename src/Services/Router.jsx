@@ -8,7 +8,7 @@ const Router = () => {
 return (
     <Routes>
 
-       <Route index element={<Car />} />
+       <Route index element={<Inventory />} />
        {/* <Route index element={<Inventory />} />*/
        <Route path="/car/:id" element={<Car />} /> }
 
