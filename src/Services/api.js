@@ -13,7 +13,7 @@ export const fetchCarById = async (id) => {
 };
 
 export const createCar = async (carData) => {
-    const response = await fetch(`${API_URL}/cars/create`, {
+    const response = await fetch(`${API_URL}/cars`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ export const createCar = async (carData) => {
 }
 
 export const updateCar = async (id, carData) => {
-    const response = await fetch(`${API_URL}/cars/${id}/update`, {
+    const response = await fetch(`${API_URL}/cars/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ export const updateCar = async (id, carData) => {
 }
 
 export const deleteCar = async (id) => {
-    const response = await fetch(`${API_URL}/cars/${id}/delete`, {
+    const response = await fetch(`${API_URL}/cars/${id}`, {
         method: 'DELETE',
     });
     return response.ok;
