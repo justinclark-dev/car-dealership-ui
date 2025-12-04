@@ -1,6 +1,6 @@
 import {Routes, Route} from "react-router-dom";
 import Inventory from "../Pages/Inventory.jsx";
-import Car from "../Pages/Car.jsx";
+import Car from "../Pages/Car/Car.jsx";
 
 
 const Router = () => {
@@ -8,8 +8,9 @@ const Router = () => {
 return (
     <Routes>
 
-       <Route index element={<Inventory />} />
-       <Route path="/car/:id" element={<Car />} />
+       <Route index element={<Car />} />
+       {/* <Route index element={<Inventory />} />*/
+       <Route path="/car/:id" element={<Car />} /> }
 
     </Routes>
 )
