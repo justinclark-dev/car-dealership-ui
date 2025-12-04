@@ -43,6 +43,7 @@ const Car = (props) => {
 
   return (
     <>
+      <button onClick={()=> navigate('/car/update')}></button>
       <p>ID: {carValues.id}</p>
       <p>Make: {carValues.make}</p>
       <p>Model: {carValues.model}</p>
