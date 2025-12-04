@@ -1,0 +1,118 @@
+.car-page {
+  background: darkgray;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+/* TOP SECTION */
+.car-top {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 80%;
+  display: flex;
+  gap: 2rem;
+  box-shadow: 0 0 10px gray;
+  margin-bottom: 2rem;
+}
+
+.car-image-placeholder {
+  flex: 2;
+  background: lightgray;
+  border: 2px dashed gray;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: dimgray;
+}
+
+.car-summary {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.car-price-main {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+.car-summary-row {
+  font-size: 1rem;
+  color: dimgray;
+}
+
+.favorite-button {
+  background: firebrick;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.favorite-button:hover {
+  background: crimson;
+}
+
+/* SPECS SECTION */
+.car-specs-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 0 10px gray;
+}
+
+.car-specs-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.car-specs-subtitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: dimgray;
+}
+
+.car-specs-divider {
+  width: 100px;
+  height: 4px;
+  background: firebrick;
+  margin: 1rem auto;
+  border-radius: 3px;
+}
+
+/* SPECS GRID */
+.car-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.spec-item {
+  background: whitesmoke;
+  color: black;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.spec-label {
+  font-weight: bold;
+  color: black;
+}

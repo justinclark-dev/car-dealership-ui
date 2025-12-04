@@ -12,6 +12,18 @@
   gap: 1.5rem;                    
 }
 
+.car-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.car-link:hover .car-card {
+  transform: scale(1.03);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+
 .car-card {
   background-color: #1f1f1f;
   border-radius: 10px;

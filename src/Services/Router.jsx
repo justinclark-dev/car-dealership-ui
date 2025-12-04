@@ -9,8 +9,7 @@ return (
     <Routes>
 
        <Route index element={<Inventory />} />
-       {/* <Route index element={<Inventory />} />*/
-       <Route path="/car/:id" element={<Car />} /> }
+       <Route path="/car/:id" element={<Car />} />
 
     </Routes>
 )
