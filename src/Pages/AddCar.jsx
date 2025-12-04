@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { createCar } from '../Services/cars';
+import { createCar } from '../Services/api.js';
 
 const initialForm = {
   make: '',
@@ -16,6 +16,7 @@ const initialForm = {
   price_sold: '',
 };
 
+// Form to create a car by POSTing to the Django API (base URL from VITE_API_URL).
 export default function AddCar() {
   const [form, setForm] = useState(initialForm);
   const [submitting, setSubmitting] = useState(false);
@@ -36,7 +37,7 @@ export default function AddCar() {
     setMessage('');
     setError('');
 
-    // Normalize values to match the API model types.
+    // Normalize values to match the Django model types before sending to the API.
     const payload = {
       ...form,
       year: form.year ? Number(form.year) : null,
@@ -48,11 +49,12 @@ export default function AddCar() {
     };
 
     try {
-      await createCar(payload);
+      const created = await createCar(payload);
+      // Show the returned ID so users know the record exists in the DB.
       setForm(initialForm);
-      setMessage('Car added successfully');
+      setMessage(`Car #${created.id ?? ''} added successfully`.trim());
     } catch (err) {
-      setError(err.message);
+      setError(err.message || 'Unable to save car.');
     } finally {
       setSubmitting(false);
     }

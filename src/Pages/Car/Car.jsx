@@ -1,64 +1,47 @@
 import "./Car.css";
-import { fetchCarById } from "../../Services/api";
-import { useState } from "react";
-import { useEffect } from "react";
+import { fetchCarById } from "../../Services/api.js";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const Car = (props) => {
+// Simple detail view for a single car.
+const Car = () => {
+  const { id } = useParams();
+  const [carValues, setCarValues] = useState(null);
+  const [error, setError] = useState('');
 
-  // const {carId} = props;
-  const carId = 3;
-
-  const [carValues, setCarValues] = useState({
-    id: 0,
-    make: '',
-    model: '',
-    year: 0,
-    trim: '',
-    color: '',
-    price_listed: 0.00,
-    milage: 0,
-    sale_pending: 'f',
-    sold: 'f',
-    days_on_lot: 0,
-    buyer: '',
-    price_sold: 0.00,
-  });
-
-  // Init Fetching
   useEffect(() => {
-
-    // Fetches data for the car
+    if (!id) return;
     const fetchCarData = async () => {
       try {
-        const carData = await fetchCarById(carId);
-        console.log(carData);
+        const carData = await fetchCarById(id);
         setCarValues(carData);
-      } catch (error) {
-        console.error("Failed to fetch car data:", error);
+      } catch (err) {
+        setError(err.message || "Failed to fetch car data");
       }
-    }
+    };
 
-    fetchCarData()
-  }, [])
+    fetchCarData();
+  }, [id]);
+
+  if (error) return <p className="error">Error: {error}</p>;
+  if (!carValues) return <p>Loading car…</p>;
 
   return (
-    <>
-      <button onClick={()=> navigate('/car/update')}></button>
+    <section className="car-detail">
+      <h1>{carValues.make} {carValues.model}</h1>
       <p>ID: {carValues.id}</p>
-      <p>Make: {carValues.make}</p>
-      <p>Model: {carValues.model}</p>
       <p>Year: {carValues.year}</p>
       <p>Trim: {carValues.trim}</p>
       <p>Color: {carValues.color}</p>
       <p>Price Listed: {carValues.price_listed}</p>
       <p>Milage: {carValues.milage}</p>
-      <p>Sale Pending: {carValues.sale_pending}</p>
-      <p>Sold: {carValues.sold}</p>
+      <p>Sale Pending: {String(carValues.sale_pending)}</p>
+      <p>Sold: {String(carValues.sold)}</p>
       <p>Days on Lot: {carValues.days_on_lot}</p>
-      <p>Buyer: {carValues.buyer}</p>
+      <p>Buyer: {carValues.buyer || '—'}</p>
       <p>Price Sold: {carValues.price_sold}</p>
-    </>
-  )
+    </section>
+  );
 };
 
 export default Car;
