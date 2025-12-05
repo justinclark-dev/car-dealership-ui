@@ -19,7 +19,8 @@
 
 .favorite-link {
   text-decoration: none;
-  color: white
+  color: white;
+  font-size: 1.25rem;
 } 
 
 .favorite-link:hover {
