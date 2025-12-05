@@ -61,10 +61,6 @@
   font-weight: bold;
 }
 
-.favorite-button:hover {
-  background: crimson;
-}
-
 /* SPECS SECTION */
 .car-specs-card {
   background: black;
@@ -76,13 +72,13 @@
 }
 
 .car-specs-title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
   color: white;
 }
 
 .car-specs-subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
   color: white;
 }
