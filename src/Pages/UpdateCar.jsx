@@ -24,7 +24,7 @@ export default function UpdateCar() {
         
         const carData = await fetchCarById(carId);
 
-        // Convert data types from Django model to form-friendly strings/booleans
+        // Convert data types from Django model
         setForm({
           make: carData.make ?? '',
           model: carData.model ?? '',
@@ -95,7 +95,7 @@ export default function UpdateCar() {
   if (Object.keys(form).length === 0 && error) {
      return <section className="update-car"><p className="error">Error: {error}</p></section>;
   }
-  
+
   return (
     <section className="update-car">
       <h2>Update Car Details (ID: {carId})</h2>
