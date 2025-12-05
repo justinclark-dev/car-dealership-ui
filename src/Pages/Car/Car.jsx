@@ -76,9 +76,9 @@ const Car = () => {
 
         <div className="car-summary">
           <div className="car-price-main">
-            ${carValues.price_listed.toFixed
-              ? carValues.price_listed.toFixed(2)
-              : carValues.price_listed}
+            ${parseFloat(carValues.price_listed)
+            .toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+          }
           </div>
           <div className="car-summary-row">ID: {carValues.id}</div>
           <div className="car-summary-row">
