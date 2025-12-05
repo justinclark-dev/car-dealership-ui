@@ -29,7 +29,15 @@
   border-radius: 10px;
   padding: 1.25rem 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  border: 1px solid grey
+  border: 1px solid grey;
+  height: 400px;
+}
+
+.car-card .inventory-image {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 200px;
 }
 
 .car-title {
