@@ -1,6 +1,7 @@
 import { getFavorites, removeFavorite } from "../Services/api";
 import { useEffect, useState } from "react"
 import './Favorites.css'
+import { Link } from 'react-router-dom';
 
 
 function Favorites() {
@@ -17,6 +18,7 @@ function Favorites() {
     setFavorites((prev) => prev.filter((car) => car.id !== id));
   };
 
+
   if (favorites.length === 0) {
     return <h2>No cars have been added to favorites yet.</h2>;
   }
@@ -28,10 +30,12 @@ function Favorites() {
       <ul className="favorites-list">
         {favorites.map((car) => (
           <li key={car.id} className="favorite-item">
-            <span>
-              {car.year} {car.make} {car.model}
-            </span>
-            <button onClick={() => handleRemove(car.id)}>
+            <Link to={`/car/${car.id}`} className="favorite-link">
+              <span>
+                {car.year} {car.make} {car.model}
+              </span>
+            </Link>
+            <button className="remove button" onClick={() => handleRemove(car.id)}>
               Remove from Favorites
             </button>
           </li>
