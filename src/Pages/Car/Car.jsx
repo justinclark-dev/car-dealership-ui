@@ -4,6 +4,7 @@ import { deleteCar } from "../../Services/api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { addFavorite } from "../../Services/api"
 
 const Car = () => {
   const { id } = useParams();
@@ -54,6 +55,12 @@ const Car = () => {
     }
   }
 
+  const handleAddFavorite = () => {
+    addFavorite(carValues);
+    // passing carValues to addFavorite triggered from the button click.
+    // stored inside localStorage as an array. 
+    alert("Car added to Favorites")
+  }
   const goToUpdateCar = () => {
     navigate(`/update-car/${carId}`);
   };
@@ -78,7 +85,7 @@ const Car = () => {
             <strong>{carValues.year} {carValues.make} {carValues.model}</strong>
           </div>
 
-          <button className="favorite-button">
+          <button className="favorite-button" onClick={handleAddFavorite}>
             Add To Favorites
           </button>
 
