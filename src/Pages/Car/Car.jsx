@@ -80,10 +80,12 @@ const Car = () => {
             .toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
           }
           </div>
-          <div className="car-summary-row">ID: {carValues.id}</div>
           <div className="car-summary-row">
-            <strong>{carValues.year} {carValues.make} {carValues.model}</strong>
+            <strong>{carValues.year}</strong>
+            <br />
+            <strong>{carValues.make} {carValues.model}</strong>
           </div>
+          <br />
 
           <button onClick={handleAddFavorite}>Add To Favorites</button>
 
@@ -116,7 +118,7 @@ const Car = () => {
           </div>
           <div className="spec-item">
             <span className="spec-label">Sale Pending:</span>
-            <span>{String(carValues.sale_pending)}</span>
+            <span>{carValues.sale_pending ? 'Yes' : 'No'}</span>
           </div>
 
           <div className="spec-item">
