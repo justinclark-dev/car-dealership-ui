@@ -1,5 +1,6 @@
 .car-page {
-  background: darkgray;
+  /* background: #242424; */
+  width: 100%;
   padding: 2rem;
   min-height: 100vh;
   display: flex;
@@ -10,10 +11,10 @@
 
 /* TOP SECTION */
 .car-top {
-  background: white;
+  background: black;
   border-radius: 10px;
   padding: 2rem;
-  width: 80%;
+  width: 95%;
   display: flex;
   gap: 2rem;
   box-shadow: 0 0 10px gray;
@@ -42,12 +43,12 @@
 .car-price-main {
   font-size: 1.5rem;
   font-weight: bold;
-  color: black;
+  color: white;
 }
 
 .car-summary-row {
   font-size: 1rem;
-  color: dimgray;
+  color: white;
 }
 
 .favorite-button {
@@ -66,10 +67,10 @@
 
 /* SPECS SECTION */
 .car-specs-card {
-  background: white;
+  background: black;
   border-radius: 10px;
   padding: 2rem;
-  width: 80%;
+  width: 95%;
   text-align: center;
   box-shadow: 0 0 10px gray;
 }
@@ -77,13 +78,13 @@
 .car-specs-title {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  color: black;
+  color: white;
 }
 
 .car-specs-subtitle {
   font-size: 1.1rem;
   font-weight: bold;
-  color: dimgray;
+  color: white;
 }
 
 .car-specs-divider {
