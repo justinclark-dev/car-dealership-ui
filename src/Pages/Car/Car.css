@@ -51,7 +51,7 @@
   color: white;
 }
 
-.favorite-button {
+.delete-button {
   background: firebrick;
   color: white;
   border: none;
@@ -60,6 +60,7 @@
   cursor: pointer;
   font-weight: bold;
 }
+
 
 /* SPECS SECTION */
 .car-specs-card {
@@ -113,3 +114,5 @@
   font-weight: bold;
   color: black;
 }
+
+

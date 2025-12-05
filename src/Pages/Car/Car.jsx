@@ -85,12 +85,11 @@ const Car = () => {
             <strong>{carValues.year} {carValues.make} {carValues.model}</strong>
           </div>
 
-          <button className="favorite-button" onClick={handleAddFavorite}>
-            Add To Favorites
-          </button>
+          <button onClick={handleAddFavorite}>Add To Favorites</button>
 
-          <button onClick={()=> submitDeleteCar(carId)}>Delete Car</button>
           <button onClick={goToUpdateCar}>Update Car</button>
+          <button className="delete-button" onClick={()=> submitDeleteCar(carId)}>Delete Car</button>
+          
 
         </div>
       </div>
