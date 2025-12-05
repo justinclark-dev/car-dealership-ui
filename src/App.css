@@ -401,6 +401,7 @@ button[type="button"]:hover {
 
 /* ==================== FORMS ==================== */
 form {
+  text-align: center;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 8px;
