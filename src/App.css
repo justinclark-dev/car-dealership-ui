@@ -49,6 +49,14 @@ body {
   align-items: center;
 }
 
+.inventory-image {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 200px;
+}
+
 /* ==================== TYPOGRAPHY ==================== */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
