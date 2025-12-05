@@ -69,10 +69,13 @@ const Car = () => {
     <div className="car-page">
       
       <div className="car-top">
-        <div className="car-image-placeholder">
-          {/* To add image in the future */}
+        {/* <div className="car-image-placeholder">
+          
           <span>Car Image</span>
-        </div>
+          
+        </div> */}
+
+        <div style={{ backgroundImage: `url(${carValues.image_url})` }} className='inventory-image'></div>
 
         <div className="car-summary">
           <div className="car-price-main">
