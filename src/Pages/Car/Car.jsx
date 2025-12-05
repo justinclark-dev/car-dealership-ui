@@ -1,12 +1,16 @@
 import "./Car.css";
 import { fetchCarById } from "../../Services/api";
+import { deleteCar } from "../../Services/api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Car = () => {
   const { id } = useParams();
   const carId = Number(id); 
   // turns the params :id into integer
+
+  const navigate = useNavigate();
 
   const [carValues, setCarValues] = useState({
     id: 0,
@@ -39,6 +43,17 @@ const Car = () => {
     }
   }, [carId]);
 
+    // Fetches data for the car
+  const submitDeleteCar = async (carId) => {
+    try {
+      const response = await deleteCar(carId);
+      console.log(response);
+      navigate('/');
+    } catch (error) {
+      console.error("Failed to delete car:", error);
+    }
+  }
+
   return (
     <div className="car-page">
       
@@ -62,6 +77,9 @@ const Car = () => {
           <button className="favorite-button">
             Add To Favorites
           </button>
+
+          <button onClick={()=> submitDeleteCar(carId)}>Delete Car</button>
+
         </div>
       </div>
 
