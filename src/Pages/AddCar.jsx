@@ -14,6 +14,7 @@ const initialForm = {
   days_on_lot: '',
   buyer: '',
   price_sold: '',
+  image_url: ''
 };
 
 export default function AddCar() {
@@ -45,6 +46,7 @@ export default function AddCar() {
       days_on_lot: form.days_on_lot ? Number(form.days_on_lot) : null,
       price_sold: form.price_sold || null,
       buyer: form.buyer || null,
+      image_url: form.image_url || null
     };
 
     try {
@@ -105,7 +107,14 @@ export default function AddCar() {
               onChange={handleChange}
             />
           </label>
-
+          <label>
+            Image URL
+            <input
+              name="image_url"
+              value={form.image_url}
+              onChange={handleChange}
+            />
+          </label>
           <label>
             Color
             <input
@@ -123,6 +132,7 @@ export default function AddCar() {
               name="price_listed"
               value={form.price_listed}
               onChange={handleChange}
+              required
             />
           </label>
 

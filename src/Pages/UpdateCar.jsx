@@ -37,6 +37,7 @@ export default function UpdateCar() {
           buyer: carData.buyer ?? '',
           price_sold: carData.price_sold?.toString() ?? '',
           sale_pending: carData.sale_pending ?? false,
+          image_url: carData.image_url ?? '',
           sold: carData.sold ?? false,
         });
 
@@ -75,6 +76,7 @@ export default function UpdateCar() {
       days_on_lot: form.days_on_lot ? Number(form.days_on_lot) : null,
       price_sold: form.price_sold || null,
       buyer: form.buyer || null,
+      image_url: form.image_url || null
     };
 
     try {
@@ -143,7 +145,14 @@ export default function UpdateCar() {
               onChange={handleChange}
             />
           </label>
-
+          <label>
+            Image URL
+            <input
+              name="image_url"
+              value={form.image_url}
+              onChange={handleChange}
+            />
+          </label>
           <label>
             Color
             <input
@@ -161,6 +170,7 @@ export default function UpdateCar() {
               name="price_listed"
               value={form.price_listed}
               onChange={handleChange}
+              required
             />
           </label>
 
