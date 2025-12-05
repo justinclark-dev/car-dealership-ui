@@ -11,14 +11,16 @@ function CarCards({ cars }) {
         {/* <img src={car.image_url} alt="" /> */}
         <div style={{ backgroundImage: `url(${car.image_url})` }} className='inventory-image'></div>
         <h3 className="car-title">
-          <span className="car-label">Make:</span> {car.make}
+          <span className="car-label"></span> {car.year} {car.make}
+          <br></br>
+          <span className="car-label"></span> {car.model}
         </h3>
         <p>
-          <span className="car-label">Model:</span> {car.model}
+          <span className="car-price">${parseFloat(car.price_listed)
+            .toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+          }</span> 
         </p>
-        <p>
-          <span className="car-label">Year:</span> {car.year}
-        </p>
+
       </li>
     </Link>
   ))}
