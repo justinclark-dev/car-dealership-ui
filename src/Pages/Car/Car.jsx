@@ -135,14 +135,16 @@ const Car = () => {
 
           <div className="spec-item">
             <span className="spec-label">Buyer:</span>
-            <span>{carValues.buyer}</span>
+            <span>{carValues.buyer ? carValues.buyer : "N/A" }</span>
           </div>
           <div className="spec-item">
             <span className="spec-label">Price Sold:</span>
             <span>
-              ${carValues.price_sold || carValues.price_sold === 0
-                ? carValues.price_sold
-                : ""}
+              {carValues.price_sold && carValues.price_sold !== 0
+                ? `$${parseFloat(carValues.price_sold).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+                : carValues.price_sold === 0
+                ? "$0.00"
+                : "N/A"}
             </span>
           </div>
         </div>
