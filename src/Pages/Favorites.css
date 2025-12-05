@@ -1,6 +1,7 @@
 .favorites-list {
   list-style: none;
   padding: 0;
+
 }
 
 .favorite-item {
@@ -10,7 +11,30 @@
   align-items: center;
   margin-bottom: 0.75rem;
   padding: 0.75rem 1rem;
-  background: whitesmoke;
+  background: black;
   border-radius: 8px;
+  border: 1px solid grey;
 
+}
+
+.favorite-link {
+  text-decoration: none;
+  color: white
+} 
+
+.favorite-link:hover {
+  color: gold;
+  text-shadow: 1px 1px 2px gold;
+} 
+
+.button {
+  background: firebrick;
+  width: 200px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: .75rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 10px;
 }
