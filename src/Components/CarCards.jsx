@@ -8,6 +8,8 @@ function CarCards({ cars }) {
   {cars.map((car) => (
     <Link to={`/car/${car.id}`} key={car.id} className="car-link">
       <li className="car-card">
+        {/* <img src={car.image_url} alt="" /> */}
+        <div style={{ backgroundImage: `url(${car.image_url})` }} className='inventory-image'></div>
         <h3 className="car-title">
           <span className="car-label">Make:</span> {car.make}
         </h3>
