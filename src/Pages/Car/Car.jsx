@@ -21,7 +21,7 @@ const Car = () => {
     trim: "",
     color: "",
     price_listed: 0,
-    mileage: 0,
+    milage: 0,
     sale_pending: "",
     sold: "",
     days_on_lot: 0,
@@ -61,6 +61,9 @@ const Car = () => {
     // stored inside localStorage as an array. 
     alert("Car added to Favorites")
   }
+  const goToUpdateCar = () => {
+    navigate(`/update-car/${carId}`);
+  };
 
   return (
     <div className="car-page">
@@ -87,6 +90,7 @@ const Car = () => {
           </button>
 
           <button onClick={()=> submitDeleteCar(carId)}>Delete Car</button>
+          <button onClick={goToUpdateCar}>Update Car</button>
 
         </div>
       </div>
@@ -107,10 +111,10 @@ const Car = () => {
             <span>{carValues.color}</span>
           </div>
 
-          {/* <div className="spec-item">
+          <div className="spec-item">
             <span className="spec-label">Mileage:</span>
-            <span>{carValues.mileage}</span>
-          </div> */}
+            <span>{carValues.milage}</span>
+          </div>
           <div className="spec-item">
             <span className="spec-label">Sale Pending:</span>
             <span>{String(carValues.sale_pending)}</span>
@@ -118,17 +122,17 @@ const Car = () => {
 
           <div className="spec-item">
             <span className="spec-label">Sold:</span>
-            <span>{String(carValues.sold)}</span>
+            <span>{carValues.sold ? 'Yes' : 'No'}</span>
           </div>
           <div className="spec-item">
             <span className="spec-label">Days on Lot:</span>
             <span>{carValues.days_on_lot}</span>
           </div>
 
-          {/* <div className="spec-item">
+          <div className="spec-item">
             <span className="spec-label">Buyer:</span>
             <span>{carValues.buyer}</span>
-          </div> */}
+          </div>
           <div className="spec-item">
             <span className="spec-label">Price Sold:</span>
             <span>
